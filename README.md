@@ -1,3 +1,6 @@
+## Management System
+본 프로젝트는 React강의를 따라 만들어진 입문자의 고객관리시스팀(Managemenet System)입니다.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
