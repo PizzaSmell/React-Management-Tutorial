@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.css'; // CSS 파일 임포트
 
 function Login() {
     const [userid, setUserid] = useState('');
