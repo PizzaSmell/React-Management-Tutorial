@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../App.css'; // App.css를 가져옵니다.
 
 function Login() {
     const [userid, setUserid] = useState('');
@@ -10,7 +11,7 @@ function Login() {
         event.preventDefault();
         console.log(`Attempting login with userid: ${userid} and password: ${password}`);
         try {
-            const response = await fetch('http://<your-ec2-public-ip>:5000/api/login', {
+            const response = await fetch('http://localhost:5000/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -21,7 +22,7 @@ function Login() {
             if (response.ok) {
                 const data = await response.json();
                 console.log('Login successful', data);
-                navigate('/customers', { state: { userid } });
+                navigate('/welcome', { state: { name: data.name, team: data.team } });
             } else {
                 console.error('Login failed');
             }
@@ -32,10 +33,10 @@ function Login() {
 
     return (
         <div className="login-container">
-            <h2>Login</h2>
+            <h2>RODEMFOOD</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>UserID:</label>
+                    <label>UserID(이름):</label>
                     <input 
                         type="text" 
                         value={userid}
@@ -44,7 +45,7 @@ function Login() {
                     />
                 </div>
                 <div>
-                    <label>Password:</label>
+                    <label>비밀번호:</label>
                     <input 
                         type="password" 
                         value={password}
