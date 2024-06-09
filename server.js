@@ -26,7 +26,7 @@ app.post('/api/login', (req, res) => {
     const { userid, password } = req.body;
     console.log(`Login attempt with userid: ${userid} and password: ${password}`);
     const query = 'SELECT name, team FROM users WHERE userid = ? AND password = ?';
-    
+
     db.query(query, [userid, password], (err, results) => {
         if (err) {
             console.error('Error fetching data from the database:', err);
@@ -44,10 +44,22 @@ app.post('/api/login', (req, res) => {
     });
 });
 
+app.get('/api/customers', (req, res) => {
+    const query = 'SELECT id, name FROM users';
+
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Error fetching data from the database:', err);
+            res.status(500).send('Error fetching data');
+            return;
+        }
+        res.json(results);
+    });
+});
+
 const PORT = 5000;
-const HOST = '0.0.0.0'; // 모든 네트워크 인터페이스에서 요청을 수락하도록 설정
+const HOST = '0.0.0.0';
 
 app.listen(PORT, HOST, () => {
     console.log(`Server is running on http://${HOST}:${PORT}`);
 });
-
