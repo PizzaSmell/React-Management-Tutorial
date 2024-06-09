@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../App.css'; // App.css를 가져옵니다.
+import './Login.css';
 
 function Login() {
     const [userid, setUserid] = useState('');
@@ -11,7 +11,8 @@ function Login() {
         event.preventDefault();
         console.log(`Attempting login with userid: ${userid} and password: ${password}`);
         try {
-            const response = await fetch('http://localhost:5000/api/login', {
+            // 여기에 EC2 인스턴스의 IP 주소를 사용합니다.
+            const response = await fetch('http://43.201.170.201:5000/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -22,7 +23,7 @@ function Login() {
             if (response.ok) {
                 const data = await response.json();
                 console.log('Login successful', data);
-                navigate('/welcome', { state: { name: data.name, team: data.team } });
+                navigate('/customers', { state: { userid } });
             } else {
                 console.error('Login failed');
             }
@@ -33,10 +34,10 @@ function Login() {
 
     return (
         <div className="login-container">
-            <h2>RODEMFOOD</h2>
+            <h2>Login</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>UserID(이름):</label>
+                    <label>UserID:</label>
                     <input 
                         type="text" 
                         value={userid}
@@ -45,7 +46,7 @@ function Login() {
                     />
                 </div>
                 <div>
-                    <label>비밀번호:</label>
+                    <label>Password:</label>
                     <input 
                         type="password" 
                         value={password}
