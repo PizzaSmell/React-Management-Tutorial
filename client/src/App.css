@@ -67,9 +67,15 @@ body {
 
 /* 반응형 디자인 추가 */
 @media (max-width: 600px) {
+    body {
+        background-color: #50C878; /* 에메랄드빛 옥색 */
+        height: auto;
+    }
+
     .login-container {
         width: 90%;
         padding: 20px;
+        margin: 20px;
     }
 
     .login-container h2 {
