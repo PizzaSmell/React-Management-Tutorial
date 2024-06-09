@@ -13,7 +13,7 @@ function Welcome() {
 
     return (
         <div className="welcome-container">
-            <h1>Welcome, {name}({team})!</h1>
+            <h1 style={{ color: 'black' }}>Welcome, {name}({team})!</h1>
             <div className="menu-container">
                 <div className="menu-item" onClick={() => handleNavigation('/purchase-management')}>
                     <div className="icon">★</div>
@@ -21,11 +21,11 @@ function Welcome() {
                 </div>
                 <div className="menu-item" onClick={() => handleNavigation('/material-management')}>
                     <div className="icon">⬢</div>
-                    <div className="label">재고관리</div>
+                    <div className="label">자재관리</div>
                 </div>
                 <div className="menu-item" onClick={() => handleNavigation('/quality-management')}>
                     <div className="icon">▲</div>
-                    <div className="label">BOM관리</div>
+                    <div className="label">품질관리</div>
                 </div>
                 <div className="menu-item" onClick={() => handleNavigation('/production-management')}>
                     <div className="icon">◆</div>
