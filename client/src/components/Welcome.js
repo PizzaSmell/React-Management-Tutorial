@@ -8,7 +8,7 @@ function Welcome() {
     const navigate = useNavigate();
 
     const handleNavigation = (path) => {
-        navigate(path);
+        navigate(path, { state: { name, team } });
     };
 
     return (
