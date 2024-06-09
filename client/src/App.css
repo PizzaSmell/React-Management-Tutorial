@@ -9,7 +9,8 @@ body {
 }
 
 .login-container {
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -48,7 +49,6 @@ body {
     border-radius: 5px;
     font-size: 14px;
     width: 100%;
-    box-sizing: border-box; /* 입력 박스가 부모 요소의 크기에 맞게 조정됩니다 */
 }
 
 .login-container form button {
@@ -60,38 +60,52 @@ body {
     cursor: pointer;
     font-size: 16px;
     width: 100%;
-    box-sizing: border-box; /* 버튼이 부모 요소의 크기에 맞게 조정됩니다 */
 }
 
 .login-container form button:hover {
     background-color: #0056b3;
 }
 
-/* 반응형 디자인 추가 */
+.welcome-container {
+    text-align: center;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.menu-item {
+    background-color: #2d3e50;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.menu-item .icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.menu-item .label {
+    font-size: 14px;
+}
+
+/* 반응형 디자인 */
 @media (max-width: 600px) {
-    body {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
+    .menu-item {
+        width: 45%;
+        margin: 5px;
     }
 
     .login-container {
-        width: 90%;
         padding: 20px;
-        margin: 0; /* 센터 정렬을 위해 마진을 제거합니다 */
-    }
-
-    .login-container h2 {
-        font-size: 20px;
-    }
-
-    .login-container form input {
-        font-size: 12px;
-    }
-
-    .login-container form button {
-        font-size: 14px;
     }
 }

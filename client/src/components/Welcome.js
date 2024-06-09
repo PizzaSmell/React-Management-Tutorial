@@ -21,11 +21,11 @@ function Welcome() {
                 </div>
                 <div className="menu-item" onClick={() => handleNavigation('/material-management')}>
                     <div className="icon">⬢</div>
-                    <div className="label">자재관리</div>
+                    <div className="label">재고관리</div>
                 </div>
                 <div className="menu-item" onClick={() => handleNavigation('/quality-management')}>
                     <div className="icon">▲</div>
-                    <div className="label">품질관리</div>
+                    <div className="label">BOM관리</div>
                 </div>
                 <div className="menu-item" onClick={() => handleNavigation('/production-management')}>
                     <div className="icon">◆</div>
