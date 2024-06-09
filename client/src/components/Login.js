@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.css';
+import './Login.css'; // CSS 파일 임포트
 
 function Login() {
     const [userid, setUserid] = useState('');
@@ -11,8 +11,7 @@ function Login() {
         event.preventDefault();
         console.log(`Attempting login with userid: ${userid} and password: ${password}`);
         try {
-            // 여기에 EC2 인스턴스의 IP 주소를 사용합니다.
-            const response = await fetch('http://43.201.170.201:5000/api/login', {
+            const response = await fetch('http://<your-ec2-public-ip>:5000/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
