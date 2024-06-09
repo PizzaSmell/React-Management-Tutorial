@@ -7,7 +7,7 @@ function MaterialManagement() {
         <div className="management-container">
             <SideMenu />
             <div className="content">
-                <h2>재고 관리</h2>
+                <h2>재 고 관 리</h2>
                 <ul>
                     <li>재고 현황</li>
                     <li>사용량 조회</li>

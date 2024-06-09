@@ -7,7 +7,7 @@ function ProductionManagement() {
         <div className="management-container">
             <SideMenu />
             <div className="content">
-                <h2>생산 관리</h2>
+                <h2>생 산 관 리</h2>
                 <ul>
                     <li>금일 생산(예정)</li>
                     <li>진행 생산(완료)</li>

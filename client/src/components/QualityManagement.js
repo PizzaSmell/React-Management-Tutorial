@@ -7,7 +7,7 @@ function QualityManagement() {
         <div className="management-container">
             <SideMenu />
             <div className="content">
-                <h2>BOM 관리</h2>
+                <h2>BOM 관 리</h2>
                 <ul>
                     <li>BOM 조회</li>
                     <li>신규등록</li>

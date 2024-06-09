@@ -7,7 +7,7 @@ function PurchaseManagement() {
         <div className="management-container">
             <SideMenu />
             <div className="content">
-                <h2>구매관리</h2>
+                <h2>구 매 관 리</h2>
                 <ul>
                     <li>거래처</li>
                     <li>발주 리스트</li>

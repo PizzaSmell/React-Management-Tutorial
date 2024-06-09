@@ -1,32 +1,32 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import './SideMenu.css';
+import { NavLink } from 'react-router-dom';
+import './Management.css';
 
 function SideMenu() {
-    const location = useLocation();
-    const navigate = useNavigate();
-    const { selectedMenu } = location.state || {};
-
-    const menuItems = [
-        { name: '구매관리', path: '/purchase-management' },
-        { name: '재고 관리', path: '/material-management' },
-        { name: 'BOM 관리', path: '/quality-management' },
-        { name: '생산 관리', path: '/production-management' },
-    ];
-
     return (
         <div className="side-menu">
-            <div className="logo">RODEMFOOD</div>
+            <h1>RODEMFOOD</h1>
             <ul>
-                {menuItems.map((item) => (
-                    <li 
-                        key={item.name} 
-                        className={selectedMenu === item.name ? 'active' : ''}
-                        onClick={() => navigate(item.path, { state: { selectedMenu: item.name } })}
-                    >
-                        {item.name}
-                    </li>
-                ))}
+                <li>
+                    <NavLink to="/purchase-management" activeClassName="active">
+                        구매관리
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to="/material-management" activeClassName="active">
+                        재고 관리
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to="/quality-management" activeClassName="active">
+                        BOM 관리
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to="/production-management" activeClassName="active">
+                        생산 관리
+                    </NavLink>
+                </li>
             </ul>
         </div>
     );
