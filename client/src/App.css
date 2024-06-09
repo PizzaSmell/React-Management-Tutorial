@@ -64,3 +64,23 @@ body {
 .login-container form button:hover {
     background-color: #0056b3;
 }
+
+/* 반응형 디자인 추가 */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .login-container h2 {
+        font-size: 20px;
+    }
+
+    .login-container form input {
+        font-size: 12px;
+    }
+
+    .login-container form button {
+        font-size: 14px;
+    }
+}
