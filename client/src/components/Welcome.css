@@ -1,19 +1,23 @@
+/* Welcome.css */
 .welcome-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #2c3e50; /* 어두운 색으로 통일 */
-    color: white;
-    text-align: center;
+    background-color: #d0d0d0; /* 배경색을 약간 어두운 색으로 변경 */
+    color: #333;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
 }
 
 .menu-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2열 배치 */
-    gap: 20px; /* 박스 간의 간격 */
-    margin-top: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .menu-item {
@@ -23,22 +27,23 @@
     justify-content: center;
     width: 150px;
     height: 150px;
-    background-color: #333;
-    color: white;
+    background-color: #ffffff;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .menu-item:hover {
-    background-color: #555;
+    background-color: #f0f0f0;
 }
 
 .icon {
-    font-size: 50px;
+    font-size: 36px;
     margin-bottom: 10px;
 }
 
 .label {
     font-size: 18px;
+    font-weight: bold;
 }
