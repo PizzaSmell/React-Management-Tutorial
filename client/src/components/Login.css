@@ -35,4 +35,32 @@ body {
 }
 
 .login-container form label {
-    margin-bottom:
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    display: block;
+}
+
+.login-container form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.login-container form button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.login-container form button:hover {
+    background-color: #0056b3;
+}
