@@ -1,61 +1,26 @@
-.welcome-container {
+.welcome {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
-    background-color: #27bfa6; /* 배경색 변경 */
-    padding: 20px;
-}
-
-.welcome-container h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #000; /* 텍스트 색상을 검은색으로 변경 */
-}
-
-.menu-container {
+    text-align: center;
+  }
+  
+  .box-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .box {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-}
-
-.menu-item {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 120px;
-    height: 120px;
-    background-color: #fff;
+    width: 150px;
+    height: 150px;
+    background-color: #333; /* 예시 배경색, 필요시 변경 */
+    color: #fff; /* 흰색 글씨 */
+    font-size: 18px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.menu-item:hover {
-    background-color: #f0f0f0;
-}
-
-.icon {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.label {
-    font-size: 16px;
-    color: #333;
-}
-
-@media (max-width: 600px) {
-    .menu-item {
-        width: 80px;
-        height: 80px;
-    }
-
-    .label {
-        font-size: 14px;
-    }
-}
+  }
+  
