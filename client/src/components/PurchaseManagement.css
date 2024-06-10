@@ -1,9 +1,0 @@
-.management-container {
-    display: flex;
-}
-
-.management-container .content {
-    margin-left: 200px;
-    padding: 20px;
-    width: calc(100% - 200px);
-}

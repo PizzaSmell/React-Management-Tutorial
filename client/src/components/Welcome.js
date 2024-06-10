@@ -4,7 +4,7 @@ import './Welcome.css';
 
 function Welcome() {
     const location = useLocation();
-    const { name, team } = location.state;
+    const { name, team } = location.state || {};
     const navigate = useNavigate();
 
     const handleNavigation = (path) => {

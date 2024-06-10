@@ -1,26 +1,12 @@
 import React from 'react';
-import SideMenu from './SideMenu';
-import './Management.css';
 
-function MaterialManagement() {
+const MaterialManagement = () => {
     return (
-        <div className="management-container">
-            <SideMenu />
-            <div className="content">
-                <div className="logout-section">
-                    <span>진경민(자재) 님 접속!</span>
-                    <button>Logout</button>
-                </div>
-                <h2>재 고 관 리</h2>
-                <ul>
-                    <li>재고 현황</li>
-                    <li>사용량 조회</li>
-                    <li>위치조회/관리</li>
-                    <li>폐기 관리</li>
-                </ul>
-            </div>
+        <div>
+            <h2>재고 현황</h2>
+            {/* 여기에서 자재관리 관련 내용을 추가합니다 */}
         </div>
     );
-}
+};
 
 export default MaterialManagement;

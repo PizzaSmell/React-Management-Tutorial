@@ -1,26 +1,12 @@
 import React from 'react';
-import SideMenu from './SideMenu';
-import './Management.css';
 
-function QualityManagement() {
+const QualityManagement = () => {
     return (
-        <div className="management-container">
-            <SideMenu />
-            <div className="content">
-                <div className="logout-section">
-                    <span>진경민(자재) 님 접속!</span>
-                    <button>Logout</button>
-                </div>
-                <h2>BOM 관 리</h2>
-                <ul>
-                    <li>BOM 조회</li>
-                    <li>신규등록</li>
-                    <li>BOM수정</li>
-                    <li>수정이력관리</li>
-                </ul>
-            </div>
+        <div>
+            <h2>BOM 조회</h2>
+            {/* 여기에서 품질관리 관련 내용을 추가합니다 */}
         </div>
     );
-}
+};
 
 export default QualityManagement;
