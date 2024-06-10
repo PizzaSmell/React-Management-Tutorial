@@ -11,7 +11,7 @@ function Login() {
         event.preventDefault();
         console.log(`Attempting login with userid: ${userid} and password: ${password}`);
         try {
-            const response = await fetch('http://localhost:5000/api/login', {
+            const response = await fetch('http://43.201.170.201:5000/api/login', { // EC2 IP로 변경
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
