@@ -1,43 +1,69 @@
-.login-container {
+body {
+    background-color: #27bfa6; /* 배경색 지정 */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #27bfa6;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    width: 400px; /* 고정된 너비로 통일 */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
 }
 
 .login-container form {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
 }
 
-.login-container form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+.login-container form div {
+    margin-bottom: 10px;
+    width: 100%; /* 전체 너비로 확장 */
+    display: flex; /* 플렉스 컨테이너로 설정 */
+    flex-direction: column; /* 세로로 정렬 */
+    align-items: flex-start; /* 좌측 정렬 */
 }
 
 .login-container form label {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    width: 100%; /* 전체 너비로 확장 */
 }
 
 .login-container form input {
-    margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
 }
 
 .login-container form button {
-    padding: 10px;
-    background-color: #27bfa6;
-    border: none;
+    padding: 12px;
+    background-color: #27bfa6; /* 기존 배경색과 동일하게 */
     color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 3px;
-    margin-top: 10px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.login-container form button:hover {
+    background-color: #0056b3;
 }

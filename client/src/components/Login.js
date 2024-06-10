@@ -34,14 +34,14 @@ function Login() {
         <div className="login-container">
             <form onSubmit={handleSubmit}>
                 <h2>RODEMFOOD</h2>
-                <label>
-                    UserID(이름):
-                    <input type="text" value={userid} onChange={(e) => setUserid(e.target.value)} />
-                </label>
-                <label>
-                    비밀번호:
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </label>
+                <div>
+                    <label>UserID(이름):</label>
+                    <input type="text" value={userid} onChange={(e) => setUserid(e.target.value)} required />
+                </div>
+                <div>
+                    <label>비밀번호:</label>
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                </div>
                 <button type="submit">Login</button>
             </form>
         </div>
