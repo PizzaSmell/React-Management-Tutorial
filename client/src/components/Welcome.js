@@ -12,24 +12,28 @@ function Welcome() {
     };
 
     return (
-        <div className="welcome-container">
-            <h1>Welcome, {name}({team})!</h1>
-            <div className="menu-container">
-                <div className="menu-item" onClick={() => handleNavigation('/purchase-management')}>
-                    <div className="icon">★</div>
-                    <div className="label">구매관리</div>
-                </div>
-                <div className="menu-item" onClick={() => handleNavigation('/material-management')}>
-                    <div className="icon">⬢</div>
-                    <div className="label">자재관리</div>
-                </div>
-                <div className="menu-item" onClick={() => handleNavigation('/quality-management')}>
-                    <div className="icon">▲</div>
-                    <div className="label">품질관리</div>
-                </div>
-                <div className="menu-item" onClick={() => handleNavigation('/production-management')}>
-                    <div className="icon">◆</div>
-                    <div className="label">생산관리</div>
+        <div className="welcome-page">
+            <div className="welcome-text">
+                <h1>Welcome, {name}({team})!</h1>
+            </div>
+            <div className="menu-layout">
+                <div className="menu-container">
+                    <div className="menu-item" onClick={() => handleNavigation('/purchase-management')}>
+                        <div className="icon">★</div>
+                        <div className="label">구매관리</div>
+                    </div>
+                    <div className="menu-item" onClick={() => handleNavigation('/material-management')}>
+                        <div className="icon">⬢</div>
+                        <div className="label">자재관리</div>
+                    </div>
+                    <div className="menu-item" onClick={() => handleNavigation('/quality-management')}>
+                        <div className="icon">▲</div>
+                        <div className="label">품질관리</div>
+                    </div>
+                    <div className="menu-item" onClick={() => handleNavigation('/production-management')}>
+                        <div className="icon">◆</div>
+                        <div className="label">생산관리</div>
+                    </div>
                 </div>
             </div>
         </div>
