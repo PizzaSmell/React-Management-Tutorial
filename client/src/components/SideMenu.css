@@ -1,44 +1,125 @@
-.side-menu {
+body {
+    margin: 0 8px;
+  }
+  
+  #root {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .custom-margin {
+    margin: 32px 0;
+  }
+  
+  .side-menu {
+    border-radius: 0px;
+    background-color: #043353;
+    width: 200px;
+    min-height: 100vh;
+    height: auto;
+    box-sizing: border-box;
+    color: #faf8f0;
+    padding: 15px;
+    transition: 1.0s all;
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #2d3e50;
-    color: white;
+  }
+  
+  .full-width {
+    transform: translateX(0px);
+  }
+  
+  .no-width {
+    transform: translateX(-208px);
+  }
+  
+  .menu-title {
+    font-size: 16px;
+    text-transform: uppercase;
     display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.menu-item {
-    margin-bottom: 5px; /* 위아래 간격을 50% 줄임 */
+    align-items: center;
+    position: relative;
+  }
+  
+  .menu-title span {
+    width: 25px;
+  }
+  
+  .menu-title span.menu-toggle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #3ca59d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: calc(-15px - (37px / 2));
+    padding: 6px;
     cursor: pointer;
-    text-align: left; /* 상위 메뉴를 좌측 정렬 */
-    padding-top: 10px; /* 메뉴 상자 내 여백 조정 */
-    background-color: #2d3e50; /* 메뉴 상자의 배경색을 메뉴바와 동일하게 */
-    width: calc(100% - 40px); /* 메뉴 상자의 너비를 메뉴바에 맞게 조정 */
-    margin-top: 300px; /* 메뉴바 상단 300px 여백 */
-}
-
-.menu-item:hover {
-    background-color: #3a4a61; /* 현재 메뉴 상자 색상보다 약간 더 밝은 색상으로 변경 */
-}
-
-.submenu {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5px; /* 하위 메뉴의 간격도 50% 줄임 */
-    padding-left: 20px; /* 하위 메뉴를 들여쓰기 */
-}
-
-.submenu a {
-    color: white;
+  }
+  
+  .searchBar input {
+    height: 40px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #cccbc92e;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    padding: 0 15px;
+    box-sizing: border-box;
+    color: #faf8f0;
+  }
+  
+  .searchBar input::placeholder {
+    color: #faf8f0;
+  }
+  
+  .searchBar input:active,
+  .searchBar input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .menu-list a {
+    padding: 12px 0;
     text-decoration: none;
-    padding: 5px 0;
-    text-align: left; /* 하위 메뉴를 좌측 정렬 */
-}
-
-.submenu a:hover {
-    text-decoration: underline;
-}
+    color: #faf8f0;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-list a span {
+    width: 30px;
+  }
+  
+  .rotated {
+    transform: rotate(45deg);
+  }
+  
+  .not-rotated {
+    transform: rotate(0deg);
+  }
+  
+  .rotate {
+    animation: rotate 0.2s linear;
+    animation-iteration-count: 5;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-90deg);
+    }
+  }
+  

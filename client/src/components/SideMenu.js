@@ -2,62 +2,78 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './SideMenu.css';
 
-function SideMenu() {
-    const [openMenu, setOpenMenu] = useState('');
+const Menu = ({ classList, children }) => {
+  let classArr = ['side-menu'];
+  classArr.push(classList);
+  classArr = classArr.join(' ');
 
-    const toggleMenu = (menu) => {
-        setOpenMenu(openMenu === menu ? '' : menu);
-    };
+  return <div className={classArr}>{children}</div>;
+};
 
-    return (
-        <div className="side-menu">
-            <div className="menu-item">
-                <span onClick={() => toggleMenu('purchase')}>구매관리</span>
-                {openMenu === 'purchase' && (
-                    <div className="submenu">
-                        <Link to="/purchase-management">거래처</Link>
-                        <Link to="/purchase-management">발주 리스트</Link>
-                        <Link to="/purchase-management">입고 완료</Link>
-                        <Link to="/purchase-management">반품 관리</Link>
-                        <Link to="/purchase-management">이슈 관리</Link>
-                    </div>
-                )}
-            </div>
-            <div className="menu-item">
-                <span onClick={() => toggleMenu('material')}>자재관리</span>
-                {openMenu === 'material' && (
-                    <div className="submenu">
-                        <Link to="/material-management">재고 현황</Link>
-                        <Link to="/material-management">사용용 조회</Link>
-                        <Link to="/material-management">위치조회/관리</Link>
-                        <Link to="/material-management">폐기 관리</Link>
-                    </div>
-                )}
-            </div>
-            <div className="menu-item">
-                <span onClick={() => toggleMenu('quality')}>품질관리</span>
-                {openMenu === 'quality' && (
-                    <div className="submenu">
-                        <Link to="/quality-management">BOM 조회</Link>
-                        <Link to="/quality-management">신규등록</Link>
-                        <Link to="/quality-management">BOM수정</Link>
-                        <Link to="/quality-management">수정이력관리</Link>
-                    </div>
-                )}
-            </div>
-            <div className="menu-item">
-                <span onClick={() => toggleMenu('production')}>생산관리</span>
-                {openMenu === 'production' && (
-                    <div className="submenu">
-                        <Link to="/production-management">금일 생산(예정)</Link>
-                        <Link to="/production-management">전일 생산(완료)</Link>
-                        <Link to="/production-management">차주 생산 예정</Link>
-                        <Link to="/production-management">계획수량 계산</Link>
-                    </div>
-                )}
-            </div>
-        </div>
-    );
-}
+const MenuTitle = ({ clickEvt }) => (
+  <div className="menu-title custom-margin">
+    <span>
+      <i className="fas fa-bars"></i>
+    </span>{' '}
+    Menu{' '}
+    <span onClick={clickEvt} className="menu-toggle">
+      <i className="fas fa-times not-rotated"></i>
+    </span>
+  </div>
+);
 
-export default SideMenu;
+const SearchBar = () => (
+  <div className="searchBar custom-margin">
+    <input type="text" placeholder="Search" />
+  </div>
+);
+
+const MenuList = () => (
+  <div className="menu-list custom-margin">
+    <Link to="/purchase-management">
+      <span>
+        <i className="fas fa-pen-fancy"></i>
+      </span>{' '}
+      구매관리
+    </Link>
+    <Link to="/material-management">
+      <span>
+        <i className="fas fa-project-diagram"></i>
+      </span>{' '}
+      자재관리
+    </Link>
+    <Link to="/quality-management">
+      <span>
+        <i className="fas fa-folder-open"></i>
+      </span>{' '}
+      품질관리
+    </Link>
+    <Link to="/production-management">
+      <span>
+        <i className="fas fa-chart-pie"></i>
+      </span>{' '}
+      생산관리{' '}
+      <span style={{ marginLeft: 'auto', width: 'auto' }}>
+        <i className="fas fa-chevron-down"></i>
+      </span>
+    </Link>
+  </div>
+);
+
+const LoadMenu = () => {
+  const [classHolder, setClassHolder] = useState('full-width');
+
+  const toggleMenu = () => {
+    setClassHolder(classHolder === 'full-width' ? 'no-width' : 'full-width');
+  };
+
+  return (
+    <Menu classList={classHolder}>
+      <MenuTitle clickEvt={toggleMenu} />
+      <SearchBar />
+      <MenuList />
+    </Menu>
+  );
+};
+
+export default LoadMenu;
