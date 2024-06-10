@@ -7,11 +7,31 @@ body {
     margin: 0;
 }
 
+.welcome-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.welcome-text {
+    margin-bottom: 20px; /* 박스들과의 간격 */
+}
+
+.welcome {
+    color: white; /* Welcome, 텍스트 색상 */
+}
+
+.user-info {
+    color: black; /* name(team)님! 텍스트 색상 */
+}
+
 .welcome-container {
     display: grid;
     grid-template-columns: repeat(2, 100px);
     grid-template-rows: repeat(2, 100px);
-    gap: 15px;
+    gap: 15px; /* 박스들 간의 간격 */
 }
 
 .box {
