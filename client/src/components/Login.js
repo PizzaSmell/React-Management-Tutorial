@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Login.css';
+import './Login.css'; // Login.css를 가져옵니다.
 
 function Login() {
     const [userid, setUserid] = useState('');
@@ -22,7 +22,6 @@ function Login() {
             if (response.ok) {
                 const data = await response.json();
                 console.log('Login successful', data);
-                localStorage.setItem('user', JSON.stringify(data));
                 navigate('/welcome', { state: { name: data.name, team: data.team } });
             } else {
                 console.error('Login failed');
