@@ -35,19 +35,15 @@ const Login = () => {
     return (
         <div className="login-container">
             <form onSubmit={handleSubmit}>
-                <h2>Login</h2>
-                <input
-                    type="text"
-                    placeholder="Userid"
-                    value={userid}
-                    onChange={(e) => setUserid(e.target.value)}
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
+                <h2>RODEMFOOD</h2>
+                <div>
+                    <label>UserID(이름):</label>
+                    <input type="text" value={userid} onChange={(e) => setUserid(e.target.value)} required />
+                </div>
+                <div>
+                    <label>비밀번호:</label>
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                </div>
                 <button type="submit">Login</button>
             </form>
         </div>

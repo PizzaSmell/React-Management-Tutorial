@@ -1,69 +1,25 @@
-body {
-    background-color: #27bfa6; /* 배경색 지정 */
+.login-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
 }
 
-.login-container {
-    width: 280px; /* 기존 너비에서 30% 더 줄임 */
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    text-align: center;
-}
-
-.login-container h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
-
-.login-container form {
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login-container form div {
-    margin-bottom: 10px;
-    width: 100%; /* 전체 너비로 확장 */
-    display: flex; /* 플렉스 컨테이너로 설정 */
-    flex-direction: column; /* 세로로 정렬 */
-    align-items: flex-start; /* 좌측 정렬 */
+h2 {
+    margin-bottom: 20px; /* LOGIN(RODEMFOOD) 텍스트와의 간격 */
 }
 
-.login-container form label {
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #333;
-    text-align: left;
-    width: 100%; /* 전체 너비로 확장 */
+div {
+    margin-bottom: 20px; /* 각 텍스트박스와의 간격 */
 }
 
-.login-container form input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    width: 80%; /* 너비를 80%로 설정 */
-}
-
-.login-container form button {
-    padding: 12px;
-    background-color: #27bfa6; /* 기존 배경색과 동일하게 */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 40%; /* 너비를 40%로 설정 */
-}
-
-.login-container form button:hover {
-    background-color: #0056b3;
+button {
+    margin-top: 20px; /* 로그인 버튼과의 간격 */
 }
