@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../App.css'; // App.css를 가져옵니다.
+import '../App.css';
 
 function Login() {
     const [userid, setUserid] = useState('');
@@ -11,7 +11,7 @@ function Login() {
         event.preventDefault();
         console.log(`Attempting login with userid: ${userid} and password: ${password}`);
         try {
-            const response = await fetch('http://43.201.170.201:5000/api/login', {
+            const response = await fetch('http://localhost:5000/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
