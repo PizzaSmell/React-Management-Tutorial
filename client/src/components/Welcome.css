@@ -21,10 +21,12 @@ body {
 
 .welcome {
     color: white; /* Welcome, 텍스트 색상 */
+    font-size: 140%; /* 현재 크기의 140%로 설정 */
 }
 
 .user-info {
     color: black; /* name(team)님! 텍스트 색상 */
+    font-size: 140%; /* 현재 크기의 140%로 설정 */
 }
 
 .welcome-container {
