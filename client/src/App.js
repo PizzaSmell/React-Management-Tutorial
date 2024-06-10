@@ -1,13 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
 import Welcome from './components/Welcome';
-import Layout from './components/Layout';
-import PurchaseManagement from './components/PurchaseManagement';
-import MaterialManagement from './components/MaterialManagement';
-import QualityManagement from './components/QualityManagement';
-import ProductionManagement from './components/ProductionManagement';
-import './App.css';
+import Management from './components/Management';
 
 function App() {
     return (
@@ -15,10 +10,10 @@ function App() {
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/welcome" element={<Welcome />} />
-                <Route path="/purchase-management" element={<Layout><PurchaseManagement /></Layout>} />
-                <Route path="/material-management" element={<Layout><MaterialManagement /></Layout>} />
-                <Route path="/quality-management" element={<Layout><QualityManagement /></Layout>} />
-                <Route path="/production-management" element={<Layout><ProductionManagement /></Layout>} />
+                <Route path="/purchase-management" element={<Management />} />
+                <Route path="/material-management" element={<Management />} />
+                <Route path="/quality-management" element={<Management />} />
+                <Route path="/production-management" element={<Management />} />
             </Routes>
         </Router>
     );
