@@ -15,8 +15,9 @@
 }
 
 .menu-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 두 개의 컬럼으로 배치 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -25,8 +26,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -49,10 +50,6 @@
 }
 
 @media (max-width: 600px) {
-    .menu-container {
-        grid-template-columns: 1fr; /* 모바일 화면에서는 한 줄로 배치 */
-    }
-
     .menu-item {
         width: 80px;
         height: 80px;

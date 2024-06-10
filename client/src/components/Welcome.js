@@ -13,7 +13,7 @@ function Welcome() {
 
     return (
         <div className="welcome-container">
-            <h1>Welcome, {name} ({team})!</h1>
+            <h1>Welcome, {name}({team})!</h1>
             <div className="menu-container">
                 <div className="menu-item" onClick={() => handleNavigation('/purchase-management')}>
                     <div className="icon">★</div>
@@ -37,4 +37,3 @@ function Welcome() {
 }
 
 export default Welcome;
-
