@@ -5,6 +5,8 @@
     align-items: center;
     height: 100vh;
     text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 h1 {
