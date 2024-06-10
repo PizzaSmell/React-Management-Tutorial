@@ -17,8 +17,6 @@ body {
 
 .welcome-text {
     margin-bottom: 20px; /* 박스들과의 간격 */
-    font-size: 130%; /* 텍스트 크기 30% 증가 */
-    font-weight: bold; /* 텍스트 굵게 */
 }
 
 .welcome {
