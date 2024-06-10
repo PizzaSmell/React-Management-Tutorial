@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import './Welcome.css';
+import './App.css';
 
 function Welcome() {
     const location = useLocation();
@@ -8,7 +8,7 @@ function Welcome() {
     const navigate = useNavigate();
 
     const handleNavigation = (path) => {
-        navigate(path);
+        navigate(path, { state: { name, team } });
     };
 
     return (

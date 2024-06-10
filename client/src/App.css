@@ -1,104 +1,176 @@
 body {
+    background-color: #27bfa6; /* 청록색 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
-.welcome-container {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.menu-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.menu-item {
-    width: 150px;
-    height: 150px;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
+.login-container {
+    width: 400px;
+    padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container form div {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.login-container form label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    display: block;
+}
+
+.login-container form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.login-container form button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.login-container form button:hover {
+    background-color: #0056b3;
+}
+
+.welcome-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #27bfa6; /* 청록색 배경 */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.welcome-container h1 {
+    margin-bottom: 30px;
+    font-size: 36px;
+    color: #fff;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-item {
+    background-color: #2d3e50;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
     cursor: pointer;
+    text-align: center;
+    width: 150px; /* 정사각형 크기 */
+    height: 150px; /* 정사각형 크기 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu-item .icon {
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 10px;
 }
 
 .menu-item .label {
     font-size: 18px;
-    color: #333;
 }
 
-.menu-item:hover {
-    background-color: #f0f0f0;
-}
-
-.logout-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.logout-button:hover {
-    background-color: #cc0000;
-}
-
-.user-info {
-    position: absolute;
-    top: 10px;
-    right: 150px;
-    color: #333;
-    font-size: 16px;
-}
-
-.layout-container {
+.layout {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #27bfa6;
-}
-
-.header {
-    background-color: #2d3e50;
-    padding: 20px;
-    color: white;
-    text-align: center;
+    height: 100vh;
 }
 
 .sidebar {
-    width: 250px;
     background-color: #2d3e50;
     color: white;
+    width: 200px;
     padding: 20px;
-    height: 100vh;
+    box-sizing: border-box;
     position: fixed;
     top: 0;
-    left: 0;
+    bottom: 0;
 }
 
-.content {
-    margin-left: 250px;
+.sidebar .menu-item {
+    background-color: #2d3e50; /* 동일한 배경색 */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar .submenu {
+    display: none;
+    flex-direction: column;
+}
+
+.sidebar .menu-item.active .submenu {
+    display: flex;
+}
+
+.main-content {
+    margin-left: 220px;
     padding: 20px;
-    flex-grow: 1;
+    background-color: #27bfa6; /* 청록색 배경 */
+    width: 100%;
 }
 
-.content h1 {
-    text-align: center;
-    margin-bottom: 20px;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d3e50;
+    color: white;
+    padding: 10px 20px;
+}
+
+.header .logout-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header .logout-button:hover {
+    background-color: #0056b3;
 }
