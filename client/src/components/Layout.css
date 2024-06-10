@@ -1,5 +1,5 @@
 body {
-    background-color: #e0e0e0; /* 약간 어두운 색상으로 조정 */
+    margin: 0;
     font-family: Arial, sans-serif;
 }
 
@@ -8,48 +8,27 @@ body {
     height: 100vh;
 }
 
-.sidebar {
+.side-menu {
     width: 250px;
-    background-color: #333;
-    color: #fff;
+    background-color: #2d3e50;
+    color: white;
     padding: 20px;
+    box-sizing: border-box;
 }
 
-.menu-item {
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-.menu-item span {
-    font-weight: bold;
-}
-
-.submenu {
-    margin-left: 20px;
-    margin-top: 10px;
-}
-
-.submenu a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    margin-bottom: 5px;
-}
-
-.submenu a:hover {
-    text-decoration: underline;
-}
-
-main {
-    flex: 1;
+.content {
+    flex-grow: 1;
+    background-color: #27bfa6;
     padding: 20px;
 }
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    margin-bottom: 20px;
+    background-color: #27bfa6;
+    padding: 10px 20px;
+    color: black;
 }
 
 .user-info {
@@ -57,19 +36,20 @@ header {
     align-items: center;
 }
 
-.user-info span {
-    margin-right: 10px;
-}
-
 .user-info button {
+    margin-left: 10px;
     padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-.user-info button:hover {
-    background-color: #0056b3;
+.submenu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.submenu a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
 }
