@@ -1,3 +1,21 @@
 body {
     background-color: #27bfa6; /* 배경색 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.welcome-container {
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 15px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #333;
 }
