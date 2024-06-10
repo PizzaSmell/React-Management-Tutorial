@@ -50,7 +50,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
-    width: 40%; /* 너비를 40%로 줄임 */
+    width: 80%; /* 너비를 80%로 설정 */
 }
 
 .login-container form button {
@@ -61,7 +61,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    width: 40%; /* 너비를 40%로 줄임 */
+    width: 40%; /* 너비를 40%로 설정 */
 }
 
 .login-container form button:hover {
