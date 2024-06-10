@@ -10,14 +10,14 @@
 }
 
 h1 {
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* 상하 간격을 줄입니다 */
 }
 
 .menu-container {
     display: grid;
     grid-template-columns: repeat(2, 150px);
     grid-template-rows: repeat(2, 150px);
-    gap: 20px;
+    gap: 10px; /* 상하 및 좌우 간격을 동일하게 줄입니다 */
     justify-content: center;
     align-items: center;
 }
