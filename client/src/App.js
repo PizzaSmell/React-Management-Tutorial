@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import Welcome from './components/Welcome';
 import Layout from './components/Layout';
@@ -10,18 +10,16 @@ import ProductionManagement from './components/ProductionManagement';
 
 function App() {
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Login />} />
-                <Route path="/welcome" element={<Welcome />} />
-                <Route path="/layout" element={<Layout />}>
-                    <Route path="purchase-management" element={<PurchaseManagement />} />
-                    <Route path="material-management" element={<MaterialManagement />} />
-                    <Route path="quality-management" element={<QualityManagement />} />
-                    <Route path="production-management" element={<ProductionManagement />} />
-                </Route>
-            </Routes>
-        </Router>
+        <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/welcome" element={<Welcome />} />
+            <Route path="/layout" element={<Layout />}>
+                <Route path="purchase-management" element={<PurchaseManagement />} />
+                <Route path="material-management" element={<MaterialManagement />} />
+                <Route path="quality-management" element={<QualityManagement />} />
+                <Route path="production-management" element={<ProductionManagement />} />
+            </Route>
+        </Routes>
     );
 }
 

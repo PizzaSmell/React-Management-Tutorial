@@ -1,12 +1,12 @@
 import React from 'react';
 
-const PurchaseManagement = () => {
+function PurchaseManagement() {
     return (
         <div>
-            <h2>거래처</h2>
-            {/* 여기에서 구매관리 관련 내용을 추가합니다 */}
+            <h2>구매관리</h2>
+            <p>여기에 구매관리 내용을 추가하세요.</p>
         </div>
     );
-};
+}
 
 export default PurchaseManagement;
