@@ -20,7 +20,7 @@ const Login = () => {
             .then((response) => response.json())
             .then((data) => {
                 if (data.message === 'Login successful') {
-                    navigate('/', { state: { userid } }); // 로그인 성공 시 메인 페이지로 이동
+                    navigate('/', { state: { userid: userid } }); // 로그인 성공 시 메인 페이지로 이동
                 } else {
                     alert('Invalid credentials'); // 로그인 실패 시 경고
                 }
