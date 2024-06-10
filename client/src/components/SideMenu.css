@@ -91,7 +91,7 @@ body {
     padding: 12px 0;
     text-decoration: none;
     color: #faf8f0;
-    font-size: 12px;
+    font-size: 14px; /* 텍스트 크기 소폭 크게 변경 */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -121,5 +121,21 @@ body {
     to {
       transform: rotate(-90deg);
     }
+  }
+  
+  /* 로그인 정보 및 로그아웃 버튼 스타일 */
+  .user-info {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    color: black;
+    font-size: 14px;
+  }
+  
+  .logout {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    font-size: 14px;
   }
   
