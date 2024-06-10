@@ -11,10 +11,14 @@ function Layout() {
         navigate('/');
     };
 
+    const toggleSubmenu = (e) => {
+        e.currentTarget.classList.toggle('active');
+    };
+
     return (
         <div className="layout">
             <div className="side-menu">
-                <div className="menu-item">
+                <div className="menu-item" onClick={toggleSubmenu}>
                     <span>구매관리</span>
                     <div className="submenu">
                         <a href="#">거래처</a>
@@ -24,21 +28,21 @@ function Layout() {
                         <a href="#">이슈관리</a>
                     </div>
                 </div>
-                <div className="menu-item">
+                <div className="menu-item" onClick={toggleSubmenu}>
                     <span>자재관리</span>
                     <div className="submenu">
                         <a href="#">하위 메뉴 1</a>
                         <a href="#">하위 메뉴 2</a>
                     </div>
                 </div>
-                <div className="menu-item">
+                <div className="menu-item" onClick={toggleSubmenu}>
                     <span>품질관리</span>
                     <div className="submenu">
                         <a href="#">하위 메뉴 1</a>
                         <a href="#">하위 메뉴 2</a>
                     </div>
                 </div>
-                <div className="menu-item">
+                <div className="menu-item" onClick={toggleSubmenu}>
                     <span>생산관리</span>
                     <div className="submenu">
                         <a href="#">하위 메뉴 1</a>
