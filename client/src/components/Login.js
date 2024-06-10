@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../App.css';
+import './Login.css';
 
 function Login() {
     const [userid, setUserid] = useState('');
@@ -11,7 +11,7 @@ function Login() {
         event.preventDefault();
         console.log(`Attempting login with userid: ${userid} and password: ${password}`);
         try {
-            const response = await fetch('http://43.201.170.201:5000/api/login', { // EC2 IP로 변경
+            const response = await fetch('http://43.201.170.201:5000/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -22,6 +22,7 @@ function Login() {
             if (response.ok) {
                 const data = await response.json();
                 console.log('Login successful', data);
+                localStorage.setItem('user', JSON.stringify(data));
                 navigate('/welcome', { state: { name: data.name, team: data.team } });
             } else {
                 console.error('Login failed');

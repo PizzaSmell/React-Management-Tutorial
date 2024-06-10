@@ -1,13 +1,20 @@
-import React from 'react';
-import { useLocation, useNavigate, Outlet } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, Outlet } from 'react-router-dom';
 import './Layout.css';
 
 function Layout() {
-    const location = useLocation();
     const navigate = useNavigate();
-    const { name, team } = location.state || {}; // Ensure location.state is defined
+    const [user, setUser] = useState({ name: '', team: '' });
+
+    useEffect(() => {
+        const storedUser = JSON.parse(localStorage.getItem('user'));
+        if (storedUser) {
+            setUser(storedUser);
+        }
+    }, []);
 
     const handleLogout = () => {
+        localStorage.removeItem('user');
         navigate('/');
     };
 
@@ -53,10 +60,11 @@ function Layout() {
             <div className="content">
                 <header>
                     <div className="user-info">
-                        <span>{name}({team})님 접속!</span>
+                        <span>{user.name}({user.team})님 접속!</span>
                         <button onClick={handleLogout}>로그아웃</button>
                     </div>
                 </header>
+                <div className="page-title">자재관리</div>
                 <Outlet />
             </div>
         </div>

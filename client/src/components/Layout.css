@@ -10,7 +10,7 @@
     color: white;
     display: flex;
     flex-direction: column;
-    position: fixed; /* 메뉴바를 화면의 가장 좌측에 고정 */
+    position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
@@ -55,6 +55,7 @@
     margin-left: 200px; /* 메뉴바의 너비만큼 마진 추가 */
     padding: 20px;
     overflow-y: auto;
+    position: relative;
 }
 
 header {
@@ -64,6 +65,11 @@ header {
     padding: 10px;
     background-color: #2d3e50;
     color: white;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: calc(100% - 200px); /* 메뉴바 너비를 뺀 나머지 부분 */
+    z-index: 1000;
 }
 
 .user-info {
@@ -86,4 +92,11 @@ header {
 
 .user-info button:hover {
     background-color: #16202a;
+}
+
+.page-title {
+    text-align: center;
+    margin-top: 70px; /* 상단 고정 헤더 높이 만큼 마진 추가 */
+    font-size: 24px;
+    font-weight: bold;
 }
