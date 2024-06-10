@@ -9,18 +9,23 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:5000/api/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ userid, password }),
-        });
+        try {
+            const response = await fetch('http://43.201.170.201:5000/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ userid, password }),
+            });
 
-        if (response.ok) {
-            const data = await response.json();
-            navigate('/welcome', { state: { name: data.name, team: data.team } });
-        } else {
+            if (response.ok) {
+                const data = await response.json();
+                navigate('/welcome', { state: { name: data.name, team: data.team } });
+            } else {
+                alert('Login failed');
+            }
+        } catch (error) {
+            console.error('Error:', error);
             alert('Login failed');
         }
     };
@@ -28,6 +33,7 @@ function Login() {
     return (
         <div className="login-container">
             <form onSubmit={handleSubmit}>
+                <h2>RODEMFOOD</h2>
                 <label>
                     UserID(이름):
                     <input type="text" value={userid} onChange={(e) => setUserid(e.target.value)} />
