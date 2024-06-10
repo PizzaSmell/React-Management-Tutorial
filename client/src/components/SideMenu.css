@@ -1,17 +1,13 @@
 body {
-    margin: 0 8px;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
   }
   
   #root {
-    font-family: 'Roboto', sans-serif;
     background-color: #fff;
     width: 100%;
     padding: 0;
     margin: 0;
-  }
-  
-  .custom-margin {
-    margin: 32px 0;
   }
   
   .side-menu {
@@ -43,6 +39,7 @@ body {
     display: flex;
     align-items: center;
     position: relative;
+    padding-top: 20px;
   }
   
   .menu-title span {
@@ -87,6 +84,10 @@ body {
     box-shadow: none;
   }
   
+  .menu-list {
+    padding-top: 20px;
+  }
+  
   .menu-list a {
     padding: 12px 0;
     text-decoration: none;
@@ -99,6 +100,32 @@ body {
   
   .menu-list a span {
     width: 30px;
+  }
+  
+  .menu-item {
+    padding: 7px 10px;
+  }
+  
+  .submenu {
+    margin: 5px 0 0;
+    padding-left: 20px;
+    background: #111;
+  }
+  
+  .submenu a {
+    display: block;
+    color: white;
+    cursor: pointer;
+    padding: 5px 0;
+  }
+  
+  .submenu a:hover,
+  .submenu a:focus {
+    text-decoration: none;
+  }
+  
+  .submenu .submenu {
+    padding-left: 20px;
   }
   
   .rotated {
