@@ -12,7 +12,7 @@
 }
 
 .menu-item {
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* 위아래 간격을 50% 줄임 */
     cursor: pointer;
     text-align: left; /* 상위 메뉴를 좌측 정렬 */
     padding-top: 10px; /* 메뉴 상자 내 여백 조정 */
@@ -21,10 +21,14 @@
     margin-top: 300px; /* 메뉴바 상단 300px 여백 */
 }
 
+.menu-item:hover {
+    background-color: #3a4a61; /* 현재 메뉴 상자 색상보다 약간 더 밝은 색상으로 변경 */
+}
+
 .submenu {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    margin-top: 5px; /* 하위 메뉴의 간격도 50% 줄임 */
     padding-left: 20px; /* 하위 메뉴를 들여쓰기 */
 }
 
