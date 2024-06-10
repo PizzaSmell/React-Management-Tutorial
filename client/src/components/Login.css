@@ -34,7 +34,7 @@ body {
     width: 100%; /* 전체 너비로 확장 */
     display: flex; /* 플렉스 컨테이너로 설정 */
     flex-direction: column; /* 세로로 정렬 */
-    align-items: flex-start; /* 좌측 정렬 */
+    align-items: center; /* 중앙 정렬 */
 }
 
 .login-container form label {
@@ -50,7 +50,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
-    width: 100%;
+    width: 60%; /* 너비를 60%로 줄임 */
 }
 
 .login-container form button {
@@ -61,7 +61,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    width: 100%;
+    width: 60%; /* 너비를 60%로 줄임 */
 }
 
 .login-container form button:hover {
