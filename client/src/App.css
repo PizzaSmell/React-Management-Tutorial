@@ -1,6 +1,6 @@
-/* index.css */
+/* App.css */
 body {
-    background-color: #d0d0d0; /* 배경색을 약간 어두운 색으로 변경 */
+    background-color: #00CED1; /* 청록색 배경 */
     display: flex;
     justify-content: center;
     align-items: center;

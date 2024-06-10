@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // 수정된 부분
+import ReactDOM from 'react-dom/client'; // 확인
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 
 const rootElement = document.getElementById('root');
-const root = ReactDOM.createRoot(rootElement); // 수정된 부분
+const root = ReactDOM.createRoot(rootElement); // 확인
 
 root.render(
     <React.StrictMode>
