@@ -41,7 +41,7 @@ body {
 .box {
     width: 100px;
     height: 100px;
-    background-color: #333;
+    background-color: #2d3e50;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -51,5 +51,5 @@ body {
 }
 
 .box:hover {
-    background-color: #2d3e50;
+    background-color: #333;
 }
