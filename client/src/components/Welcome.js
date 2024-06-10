@@ -3,15 +3,15 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import './Welcome.css';
 
 function Welcome() {
-    const location = useLocation();
-    const { userid } = location.state || { userid: '' };
-    const navigate = useNavigate();
-    const [userInfo, setUserInfo] = useState({ name: '사용자', team: '팀' });
+    const location = useLocation(); // 현재 위치를 가져오는 훅
+    const { userid } = location.state || { userid: '' }; // 로그인한 사용자의 ID
+    const navigate = useNavigate(); // 페이지 네비게이션 훅
+    const [userInfo, setUserInfo] = useState({ name: '사용자', team: '팀' }); // 사용자 정보 상태
 
-    // 컴포넌트가 마운트될 때 사용자 정보를 가져옵니다
+    // 컴포넌트가 마운트될 때 사용자 정보를 가져옴
     useEffect(() => {
         if (userid) {
-            fetch(`/api/user-info?userid=${userid}`)
+            fetch(`http://43.201.170.201:5000/api/user-info?userid=${userid}`)
                 .then(response => response.json())
                 .then(data => setUserInfo({ name: data.name, team: data.team }))
                 .catch(error => console.error('Error fetching user info:', error));

@@ -7,6 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+// 데이터베이스 연결 정보
 const db = mysql.createConnection({
     host: 'management-rodem.cx42gsaqw602.ap-southeast-2.rds.amazonaws.com',
     user: 'admin',
@@ -14,6 +15,7 @@ const db = mysql.createConnection({
     database: 'management_db'
 });
 
+// 데이터베이스 연결
 db.connect(err => {
     if (err) {
         console.error('Error connecting to the database:', err);
