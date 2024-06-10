@@ -1,19 +1,22 @@
-.welcome {
+.welcome-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
-  }
-  
-  .box-container {
+}
+
+.menu-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-  }
-  
-  .box {
+    margin-top: 20px;
+}
+
+.menu-item {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 150px;
@@ -22,5 +25,14 @@
     color: #fff; /* 흰색 글씨 */
     font-size: 18px;
     border-radius: 10px;
-  }
-  
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #555; /* 호버 시 배경색 변경 */
+}
+
+.icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
