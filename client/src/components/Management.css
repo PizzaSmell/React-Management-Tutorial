@@ -1,33 +1,9 @@
-.management-container {
+.management {
     display: flex;
-    height: 100vh;
-    background-color: #27bfa6; /* 배경색 변경 */
-}
-
-.sidebar {
-    width: 200px;
-    background-color: #2d3e50; /* 사이드바 색상 */
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-}
-
-.sidebar-item {
-    color: #fff;
-    padding: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.sidebar-item:hover {
-    background-color: #1a252f;
 }
 
 .content {
-    flex: 1;
+    margin-left: 200px; /* 사이드 메뉴와 겹치지 않도록 여백 설정 */
     padding: 20px;
-}
-
-.content h1 {
-    color: #000; /* 텍스트 색상을 검은색으로 변경 */
+    width: calc(100% - 200px);
 }
