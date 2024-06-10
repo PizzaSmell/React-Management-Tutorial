@@ -9,7 +9,7 @@ body {
 }
 
 .login-container {
-    width: 320px; /* 20% 줄인 너비 */
+    width: 280px; /* 기존 너비에서 30% 더 줄임 */
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -34,7 +34,7 @@ body {
     width: 100%; /* 전체 너비로 확장 */
     display: flex; /* 플렉스 컨테이너로 설정 */
     flex-direction: column; /* 세로로 정렬 */
-    align-items: center; /* 중앙 정렬 */
+    align-items: flex-start; /* 좌측 정렬 */
 }
 
 .login-container form label {
@@ -50,7 +50,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
-    width: 60%; /* 너비를 60%로 줄임 */
+    width: 40%; /* 너비를 40%로 줄임 */
 }
 
 .login-container form button {
@@ -61,7 +61,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    width: 60%; /* 너비를 60%로 줄임 */
+    width: 40%; /* 너비를 40%로 줄임 */
 }
 
 .login-container form button:hover {
