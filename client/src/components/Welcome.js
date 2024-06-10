@@ -4,16 +4,16 @@ import './Welcome.css';
 
 function Welcome() {
     const location = useLocation();
-    const { name, team } = location.state || { name: '', team: '' };
+    const { name, team } = location.state || { name: '사용자', team: '팀' };
     const navigate = useNavigate();
 
     const handleNavigation = (path) => {
-        navigate(path, { state: { name, team } });
+        navigate(path);
     };
 
     return (
         <div className="welcome-container">
-            <h1>Welcome, {name}({team})!</h1>
+            <h1>Welcome, {name} ({team})!</h1>
             <div className="menu-container">
                 <div className="menu-item" onClick={() => handleNavigation('/purchase-management')}>
                     <div className="icon">★</div>
