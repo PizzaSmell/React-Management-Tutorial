@@ -17,9 +17,15 @@ const Login = () => {
             },
             body: JSON.stringify({ userid, password }), // 로그인 정보 전송
         })
-            .then((response) => response.json())
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then((data) => {
                 if (data.message === 'Login successful') {
+                    console.log('Login successful:', userid);
                     navigate('/', { state: { userid: userid } }); // 로그인 성공 시 메인 페이지로 이동
                 } else {
                     alert('Invalid credentials'); // 로그인 실패 시 경고
@@ -27,6 +33,7 @@ const Login = () => {
             })
             .catch((error) => {
                 console.error('Error:', error); // 에러 로그 출력
+                alert('An error occurred. Please try again.');
             });
     };
 

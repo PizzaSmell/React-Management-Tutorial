@@ -10,10 +10,19 @@ function Welcome() {
 
     // 컴포넌트가 마운트될 때 사용자 정보를 가져옴
     useEffect(() => {
+        console.log('UserID:', userid);
         if (userid) {
             fetch(`http://43.201.170.201:5000/api/user-info?userid=${userid}`)
-                .then(response => response.json())
-                .then(data => setUserInfo({ name: data.name, team: data.team }))
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('User Info:', data);
+                    setUserInfo({ name: data.name, team: data.team });
+                })
                 .catch(error => console.error('Error fetching user info:', error));
         }
     }, [userid]);
