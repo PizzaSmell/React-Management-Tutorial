@@ -1,10 +1,10 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import './App.css';
+import './Welcome.css';
 
 function Welcome() {
     const location = useLocation();
-    const { name, team } = location.state;
+    const { name, team } = location.state || { name: '', team: '' };
     const navigate = useNavigate();
 
     const handleNavigation = (path) => {

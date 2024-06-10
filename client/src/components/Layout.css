@@ -1,102 +1,24 @@
-.layout {
+.layout-container {
     display: flex;
     height: 100vh;
-    background-color: #27bfa6;
 }
 
-.side-menu {
-    width: 200px;
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
     background-color: #2d3e50;
     color: white;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    padding-top: 20px;
-}
-
-.menu-item {
-    padding: 15px;
-    cursor: pointer;
-    border-bottom: 1px solid #fff;
-}
-
-.menu-item span {
-    font-weight: bold;
-}
-
-.menu-item .submenu {
-    display: none;
-    flex-direction: column;
-    margin-left: 20px;
-}
-
-.menu-item.active .submenu {
-    display: flex;
-}
-
-.menu-item .submenu a {
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-    background-color: #2d3e50; /* 버튼 배경색을 메뉴바와 동일한 색으로 변경 */
-    margin-bottom: 5px;
-    border-radius: 5px;
-}
-
-.menu-item .submenu a:hover {
-    background-color: #1f2b3a;
 }
 
 .content {
     flex: 1;
-    margin-left: 200px; /* 메뉴바의 너비만큼 마진 추가 */
+    background-color: #27bfa6;
     padding: 20px;
-    overflow-y: auto;
-    position: relative;
-}
-
-header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 10px;
-    background-color: #2d3e50;
-    color: white;
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: calc(100% - 200px); /* 메뉴바 너비를 뺀 나머지 부분 */
-    z-index: 1000;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-}
-
-.user-info span {
-    margin-right: 10px;
-}
-
-.user-info button {
-    padding: 5px 10px;
-    background-color: #1f2b3a;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.user-info button:hover {
-    background-color: #16202a;
-}
-
-.page-title {
-    text-align: center;
-    margin-top: 70px; /* 상단 고정 헤더 높이 만큼 마진 추가 */
-    font-size: 24px;
-    font-weight: bold;
 }
