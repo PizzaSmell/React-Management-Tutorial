@@ -1,71 +1,38 @@
-body {
-    background-color: #27bfa6; /* 배경색 지정 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
+/* 로그인 페이지 전체를 감싸는 컨테이너 */
 .login-container {
-    width: 280px; /* 기존 너비에서 30% 더 줄임 */
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    text-align: center;
-}
-
-.login-container h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
-
-.login-container form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.login-container form div {
-    margin-bottom: 10px;
-    width: 100%; /* 전체 너비로 확장 */
-    display: flex; /* 플렉스 컨테이너로 설정 */
-    flex-direction: column; /* 세로로 정렬 */
-    align-items: flex-start; /* 좌측 정렬 */
-}
-
-.login-container form label {
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #333;
-    text-align: left;
-    width: 100%; /* 전체 너비로 확장 */
-}
-
-.login-container form input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    width: 80%; /* 너비를 80%로 설정 */
-    margin: 10px 0; /* 상하 간격을 10px로 설정 */
-}
-
-.login-container form button {
-    padding: 12px;
-    background-color: #27bfa6; /* 기존 배경색과 동일하게 */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 40%; /* 너비를 40%로 설정 */
-    margin: 10px 0; /* 상하 간격을 10px로 설정 */
-}
-
-.login-container form button:hover {
-    background-color: #0056b3;
-}
+    display: flex; /* 플렉스 박스 레이아웃을 사용하여 중앙 정렬 */
+    flex-direction: column; /* 플렉스 방향을 세로로 설정 */
+    align-items: center; /* 수직 방향으로 중앙 정렬 */
+    justify-content: center; /* 수평 방향으로 중앙 정렬 */
+    height: 100vh; /* 뷰포트 높이의 100%를 차지 */
+    background-color: #f0f0f0; /* 배경 색상을 밝은 회색으로 설정 */
+  }
+  
+  /* 로그인 폼 스타일링 */
+  .login-form {
+    background-color: white; /* 배경 색상을 흰색으로 설정 */
+    padding: 20px; /* 내부 여백을 20px로 설정 */
+    border-radius: 5px; /* 모서리를 둥글게 설정 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 효과 */
+  }
+  
+  /* 입력 필드 스타일링 */
+  .login-form input {
+    margin-bottom: 10px; /* 아래쪽 여백을 10px로 설정 */
+    padding: 10px; /* 내부 여백을 10px로 설정 */
+    width: 100%; /* 너비를 100%로 설정하여 부모 요소에 맞춤 */
+    border: 1px solid #ccc; /* 테두리를 밝은 회색으로 설정 */
+    border-radius: 3px; /* 모서리를 둥글게 설정 */
+  }
+  
+  /* 로그인 버튼 스타일링 */
+  .login-form button {
+    padding: 10px; /* 내부 여백을 10px로 설정 */
+    width: 100%; /* 너비를 100%로 설정하여 부모 요소에 맞춤 */
+    background-color: #007bff; /* 배경 색상을 파란색으로 설정 */
+    color: white; /* 텍스트 색상을 흰색으로 설정 */
+    border: none; /* 테두리를 제거 */
+    border-radius: 3px; /* 모서리를 둥글게 설정 */
+    cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+  }
+  

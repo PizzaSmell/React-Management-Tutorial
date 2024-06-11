@@ -1,41 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // useHistory 대신 useNavigate를 사용합니다.
-import styled from 'styled-components';
-
-// 스타일 컴포넌트 정의
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-`;
-
-const Form = styled.form`
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-`;
-
-const Input = styled.input`
-  margin-bottom: 10px;
-  padding: 10px;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-`;
-
-const Button = styled.button`
-  padding: 10px;
-  width: 100%;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-`;
+import './Login.css'; // 기존 CSS 파일을 불러옵니다.
 
 const Login = () => {
   const [userid, setUserid] = useState(''); // userid 상태 변수
@@ -63,23 +28,23 @@ const Login = () => {
   };
 
   return (
-    <Container>
-      <Form onSubmit={handleSubmit}>
-        <Input
+    <div className="login-container">
+      <form className="login-form" onSubmit={handleSubmit}>
+        <input
           type="text"
           placeholder="User ID"
           value={userid}
-          onChange={(e) => setUserid(e.target.value)}
+          onChange={(e) => setUserid(e.target.value)} // 사용자 ID 입력 필드 업데이트
         />
-        <Input
+        <input
           type="password"
           placeholder="Password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)} // 비밀번호 입력 필드 업데이트
         />
-        <Button type="submit">Login</Button>
-      </Form>
-    </Container>
+        <button type="submit">Login</button> {/* 로그인 버튼 */}
+      </form>
+    </div>
   );
 };
 
