@@ -1,7 +1,10 @@
 require('dotenv').config(); // .env 파일에서 환경 변수를 로드합니다.
 const express = require('express');
 const mysql = require('mysql');
+const cors = require('cors'); // CORS 패키지를 불러옵니다.
 const app = express();
+
+app.use(cors()); // 모든 요청에 대해 CORS를 허용합니다.
 
 // MySQL 데이터베이스 연결 설정
 const db = mysql.createConnection({
