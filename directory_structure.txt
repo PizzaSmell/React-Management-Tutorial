@@ -56217,6 +56217,7 @@ C:.
 |       |   App.css
 |       |   App.js
 |       |   App.test.js
+|       |   components.zip
 |       |   index.css
 |       |   index.js
 |       |   logo.svg
@@ -56229,10 +56230,7 @@ C:.
 |               Login.css
 |               Login.js
 |               Management.css
-|               MaterialManagement.js
-|               ProductionManagement.js
-|               PurchaseManagement.js
-|               QualityManagement.js
+|               Management.js
 |               SideMenu.css
 |               SideMenu.js
 |               Welcome.css

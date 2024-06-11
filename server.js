@@ -1,73 +1,72 @@
+require('dotenv').config(); // .env 파일에서 환경 변수를 로드합니다.
 const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const mysql = require('mysql2');
-
+const mysql = require('mysql');
 const app = express();
-app.use(bodyParser.json());
-app.use(cors());
 
-// 데이터베이스 연결 정보
+// MySQL 데이터베이스 연결 설정
 const db = mysql.createConnection({
-    host: 'management-rodem.cx42gsaqw602.ap-southeast-2.rds.amazonaws.com',
-    user: 'admin',
-    password: 'wlsrudals86!',
-    database: 'management_db'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
 });
 
-// 데이터베이스 연결
+// 데이터베이스에 연결합니다.
 db.connect(err => {
     if (err) {
-        console.error('Error connecting to the database:', err);
+        console.error('Error connecting to the database:', err); // 데이터베이스 연결 오류를 콘솔에 출력합니다.
         return;
     }
-    console.log('Connected to the database.');
+    console.log('Connected to the MySQL server.'); // 데이터베이스 연결 성공 메시지를 콘솔에 출력합니다.
 });
+
+app.use(express.json()); // JSON 요청 본문을 파싱하기 위한 미들웨어를 설정합니다.
 
 // 로그인 엔드포인트
 app.post('/api/login', (req, res) => {
-    const { userid, password } = req.body;
-    console.log(`Login attempt with userid: ${userid} and password: ${password}`);
-    const query = 'SELECT name, team FROM users WHERE userid = ? AND password = ?';
-    
+    const { userid, password } = req.body; // 요청 본문에서 userid와 password를 추출합니다.
+    const query = 'SELECT * FROM users WHERE userid = ? AND password = ?';
+
+    // 데이터베이스에서 사용자 자격 증명을 조회합니다.
     db.query(query, [userid, password], (err, results) => {
         if (err) {
-            console.error('Error fetching data from the database:', err);
-            res.status(500).send('Error fetching data');
+            console.error('Database error during login:', err); // 쿼리 실행 중 오류 발생 시 콘솔에 출력합니다.
+            res.status(500).send({ message: 'Internal server error during login. Please try again later.' }); // 클라이언트에게 오류 메시지를 보냅니다.
             return;
         }
 
         if (results.length > 0) {
-            console.log(`Login successful for userid: ${userid}`);
-            res.json({ message: 'Login successful', name: results[0].name, team: results[0].team });
+            res.send({ message: 'Login successful' }); // 인증 성공 시 성공 메시지를 보냅니다.
         } else {
-            console.log(`Login failed for userid: ${userid}`);
-            res.status(401).send('Invalid credentials');
+            console.error(`Invalid credentials for userid: ${userid}`); // 잘못된 자격 증명 메시지를 콘솔에 출력합니다.
+            res.status(401).send({ message: 'Invalid credentials. Please check your userid and password.' }); // 클라이언트에게 인증 실패 메시지를 보냅니다.
         }
     });
 });
 
-// 로그인한 사용자의 이름과 팀 정보를 가져오는 엔드포인트
+// 로그인한 사용자의 정보 조회 엔드포인트
 app.get('/api/user-info', (req, res) => {
-    const { userid } = req.query;
+    const { userid } = req.query; // 요청 쿼리에서 userid를 추출합니다.
     const query = 'SELECT name, team FROM users WHERE userid = ?';
-    
+
+    // 데이터베이스에서 사용자 정보를 조회합니다.
     db.query(query, [userid], (err, results) => {
         if (err) {
-            console.error('Error fetching data from the database:', err);
-            res.status(500).send('Error fetching data');
+            console.error('Error fetching user info from the database:', err); // 쿼리 실행 중 오류 발생 시 콘솔에 출력합니다.
+            res.status(500).send({ message: 'Internal server error while fetching user info. Please try again later.' }); // 클라이언트에게 오류 메시지를 보냅니다.
             return;
         }
 
         if (results.length > 0) {
-            res.json({ name: results[0].name, team: results[0].team });
+            res.json({ name: results[0].name, team: results[0].team }); // 사용자 정보를 JSON 형태로 클라이언트에게 보냅니다.
         } else {
-            res.status(404).send('User not found');
+            res.status(404).send({ message: 'User not found. Please check the userid.' }); // 사용자를 찾을 수 없을 때 메시지를 보냅니다.
         }
     });
 });
 
-const PORT = 5000;
+// 서버를 시작합니다.
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server is running on http://0.0.0.0:${PORT}`);
+    console.log(`Server is running on http://0.0.0.0:${PORT}`); // 서버 시작 메시지를 콘솔에 출력합니다.
 });
