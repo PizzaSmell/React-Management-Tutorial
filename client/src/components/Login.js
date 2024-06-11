@@ -1,51 +1,57 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // useHistory 대신 useNavigate를 사용합니다.
-import './Login.css'; // 기존 CSS 파일을 불러옵니다.
+import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
 const Login = () => {
-  const [userid, setUserid] = useState(''); // userid 상태 변수
-  const [password, setPassword] = useState(''); // password 상태 변수
-  const navigate = useNavigate(); // useHistory 대신 useNavigate 사용
+    const [userid, setUserid] = useState(''); // 사용자 ID 상태
+    const [password, setPassword] = useState(''); // 비밀번호 상태
+    const navigate = useNavigate(); // 페이지 네비게이션 훅
 
-  // 로그인 폼 제출 핸들러
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // 기본 폼 제출 동작을 방지합니다.
+    const handleSubmit = (e) => {
+        e.preventDefault(); // 폼 제출 기본 동작 방지
 
-    // 로그인 API 요청
-    const response = await fetch('http://43.201.170.201:3000/api/login', { // 서버 IP 주소를 사용합니다.
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ userid, password }),
-    });
+        fetch('http://43.201.170.201:5000/api/login', { // 로그인 API 호출
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ userid, password }), // 로그인 정보 전송
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.message === 'Login successful') {
+                    console.log('Login successful:', userid); // 성공 메시지 로그
+                    navigate('/welcome', { state: { userid: userid } }); // 로그인 성공 시 Welcome 페이지로 이동
+                } else {
+                    alert('Invalid credentials'); // 로그인 실패 시 경고
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error); // 에러 로그 출력
+                alert('An error occurred. Please try again.');
+            });
+    };
 
-    if (response.ok) {
-      navigate('/management'); // 로그인 성공 시 관리 페이지로 이동합니다.
-    } else {
-      alert('Login failed'); // 로그인 실패 시 알림 메시지를 표시합니다.
-    }
-  };
-
-  return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="User ID"
-          value={userid}
-          onChange={(e) => setUserid(e.target.value)} // 사용자 ID 입력 필드 업데이트
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)} // 비밀번호 입력 필드 업데이트
-        />
-        <button type="submit">Login</button> {/* 로그인 버튼 */}
-      </form>
-    </div>
-  );
+    return (
+        <div className="login-container">
+            <form onSubmit={handleSubmit}>
+                <h2>RODEMFOOD</h2> {/* 제목 */}
+                <input
+                    type="text"
+                    placeholder="Userid"
+                    value={userid}
+                    onChange={(e) => setUserid(e.target.value)} // 사용자 ID 입력 필드 업데이트
+                />
+                <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)} // 비밀번호 입력 필드 업데이트
+                />
+                <button type="submit">Login</button> {/* 로그인 버튼 */}
+            </form>
+        </div>
+    );
 };
 
 export default Login;
