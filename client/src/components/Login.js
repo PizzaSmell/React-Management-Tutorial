@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // useHistory 대신 useNavigate를 사용합니다.
 import styled from 'styled-components';
 
 // 스타일 컴포넌트 정의
@@ -40,7 +40,7 @@ const Button = styled.button`
 const Login = () => {
   const [userid, setUserid] = useState(''); // userid 상태 변수
   const [password, setPassword] = useState(''); // password 상태 변수
-  const history = useHistory(); // useHistory 훅
+  const navigate = useNavigate(); // useHistory 대신 useNavigate 사용
 
   // 로그인 폼 제출 핸들러
   const handleSubmit = async (e) => {
@@ -56,7 +56,7 @@ const Login = () => {
     });
 
     if (response.ok) {
-      history.push('/management'); // 로그인 성공 시 관리 페이지로 이동합니다.
+      navigate('/management'); // 로그인 성공 시 관리 페이지로 이동합니다.
     } else {
       alert('Login failed'); // 로그인 실패 시 알림 메시지를 표시합니다.
     }
