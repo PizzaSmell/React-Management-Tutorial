@@ -21,6 +21,15 @@ db.connect(err => {
         return;
     }
     console.log('Connected to the MySQL server.'); // 데이터베이스 연결 성공 메시지를 콘솔에 출력합니다.
+
+    // 데이터베이스 연결 테스트
+    db.query('SELECT 1 + 1 AS solution', (err, results) => {
+        if (err) {
+            console.error('Database connection test failed:', err);
+        } else {
+            console.log('Database connection test successful:', results[0].solution);
+        }
+    });
 });
 
 app.use(express.json()); // JSON 요청 본문을 파싱하기 위한 미들웨어를 설정합니다.
@@ -34,9 +43,11 @@ app.post('/api/login', (req, res) => {
     db.query(query, [userid, password], (err, results) => {
         if (err) {
             console.error('Database error during login:', err); // 쿼리 실행 중 오류 발생 시 콘솔에 출력합니다.
-            res.status(500).send({ message: 'Internal server error during login. Please try again later.' }); // 클라이언트에게 오류 메시지를 보냅니다.
+            res.status(500).send({ message: 'Internal server error during login. Please try again later.', error: err }); // 클라이언트에게 오류 메시지를 보냅니다.
             return;
         }
+
+        console.log('Login query results:', results); // 쿼리 결과를 로그에 출력합니다.
 
         if (results.length > 0) {
             res.send({ message: 'Login successful' }); // 인증 성공 시 성공 메시지를 보냅니다.
@@ -56,9 +67,11 @@ app.get('/api/user-info', (req, res) => {
     db.query(query, [userid], (err, results) => {
         if (err) {
             console.error('Error fetching user info from the database:', err); // 쿼리 실행 중 오류 발생 시 콘솔에 출력합니다.
-            res.status(500).send({ message: 'Internal server error while fetching user info. Please try again later.' }); // 클라이언트에게 오류 메시지를 보냅니다.
+            res.status(500).send({ message: 'Internal server error while fetching user info. Please try again later.', error: err }); // 클라이언트에게 오류 메시지를 보냅니다.
             return;
         }
+
+        console.log('User info query results:', results); // 쿼리 결과를 로그에 출력합니다.
 
         if (results.length > 0) {
             res.json({ name: results[0].name, team: results[0].team }); // 사용자 정보를 JSON 형태로 클라이언트에게 보냅니다.
